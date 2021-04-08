@@ -51,6 +51,7 @@ namespace OnBoarding.API
 
         private void AdicionarInjecaoDeDependencia(IServiceCollection services)
         {
+            services.AddScoped(typeof(ICargoRepository), typeof(CargoRepository));
             services.AddScoped(typeof(IEmpresaRepository), typeof(EmpresaRepository));
             services.AddScoped(typeof(IFuncionarioRepository), typeof(FuncionarioRepository));
             services.AddScoped(typeof(IArmazenadorDeEmpresa), typeof(ArmazenadorDeEmpresa));

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnBoarding.Domain.Cargos;
 using OnBoarding.Domain.Empresa;
 using OnBoarding.Domain.Empresas;
 using System;
@@ -16,6 +17,8 @@ namespace OnBoarding.Data
 
         public DbSet<Empresa> Empresa { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
+
+        public DbSet<Cargo> Cargo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -51,6 +54,13 @@ namespace OnBoarding.Data
 
             funcionario.Property(x => x.DataContratacao)
                  .IsRequired();
+
+            var cargo = modelBuilder.Entity<Cargo>();
+
+            cargo.Property(x => x.Descricao)
+                .IsRequired()
+                .HasMaxLength(250);
+
 
 
 

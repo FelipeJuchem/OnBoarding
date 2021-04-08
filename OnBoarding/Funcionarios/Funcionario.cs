@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnBoarding.Domain.Empresa
+namespace OnBoarding.Domain.Funcionarios
 {
     public class Funcionario
     {

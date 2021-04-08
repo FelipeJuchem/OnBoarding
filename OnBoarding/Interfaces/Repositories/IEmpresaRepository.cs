@@ -8,14 +8,14 @@ namespace OnBoarding.Domain.Interfaces.Repositories
     public interface IEmpresaRepository
     {
         // 7 Passo: Passa para a interface a entidade Empresa inicializada. Nesse momento a Injeção de Dependencia (addScoped) se encarrega de saber qual classe está implementando essa interface.
-        void Armazenar(Empresas.Empresa obj);
+        void Armazenar(Empresa obj);
 
-        void Excluir(Empresas.Empresa obj);
+        void Excluir(Empresa obj);
 
-        Empresas.Empresa BuscarPorId(int Id);
+        Empresa BuscarPorId(int Id);
 
-        List<Empresas.Empresa> BuscarLista();
+        List<Empresa> BuscarLista();
 
-        Empresas.Empresa Alterador(Empresas.Empresa obj);
+        Empresa Alterador(Empresa obj);
     }
 }
