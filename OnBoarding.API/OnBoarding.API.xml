@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OnBoarding.API</name>
+    </assembly>
+    <members>
+        <member name="M:OnBoarding.API.Controllers.EmpresaController.Post(OnBoarding.Domain.Dto.EmpresaDto)">
+            <summary>
+            Método para armazenar empresa
+            </summary>
+            <param name="empresaDto"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
