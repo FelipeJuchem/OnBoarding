@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnBoarding.Domain.Cargos;
-using OnBoarding.Domain.Empresa;
 using OnBoarding.Domain.Empresas;
+using OnBoarding.Domain.Funcionarios;
 using System;
 
 namespace OnBoarding.Data
