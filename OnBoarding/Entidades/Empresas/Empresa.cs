@@ -1,8 +1,9 @@
-﻿using System;
+﻿using OnBoarding.Domain.Entidades.Funcionarios;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnBoarding.Domain.Empresas
+namespace OnBoarding.Domain.Entidades.Empresas
 {
     public class Empresa
     {
@@ -21,6 +22,8 @@ namespace OnBoarding.Domain.Empresas
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public DateTime DataFundacao  { get; private set; }
+        public List<Funcionario> Funcionarios { get; private set; }
+
 
         public void update(string nome, DateTime dataFundacao)
         {

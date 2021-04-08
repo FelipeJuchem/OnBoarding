@@ -1,4 +1,4 @@
-﻿using OnBoarding.Domain.Empresas;
+﻿using OnBoarding.Domain.Entidades.Empresas;
 using System;
 using System.Collections.Generic;
 using System.Text;

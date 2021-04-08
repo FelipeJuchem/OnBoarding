@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OnBoarding.Domain.Cargos;
-using OnBoarding.Domain.Empresas;
-using OnBoarding.Domain.Funcionarios;
+using OnBoarding.Domain.Entidades.Cargos;
+using OnBoarding.Domain.Entidades.Empresas;
+using OnBoarding.Domain.Entidades.Funcionarios;
+using OnBoarding.Domain.Entidades.FuncionariosCargos;
 using System;
 
 namespace OnBoarding.Data
@@ -54,6 +55,25 @@ namespace OnBoarding.Data
 
             funcionario.Property(x => x.DataContratacao)
                  .IsRequired();
+
+            funcionario.HasOne(x => x.Empresa)
+                .WithMany(x => x.Funcionarios)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(x => x.EmpresaId);
+
+            var funcionarioCargo = modelBuilder.Entity<FuncionarioCargo>();
+
+            funcionarioCargo.HasKey(x => new { x.CargoId, x.FuncionarioId });
+
+            funcionarioCargo.HasOne(x => x.Cargo)
+                .WithMany(x => x.FuncionariosCargos)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(x => x.CargoId);
+
+            funcionarioCargo.HasOne(x => x.Funcionario)
+                .WithMany(x => x.FuncionariosCargos)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasForeignKey(x => x.FuncionarioId);
 
             var cargo = modelBuilder.Entity<Cargo>();
 

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnBoarding.Data;
 using OnBoarding.Domain.Dto;
-using OnBoarding.Domain.Empresas;
 using OnBoarding.Domain.Interfaces.Services;
 using OnBoarding.Domain.Servicos;
 using System;

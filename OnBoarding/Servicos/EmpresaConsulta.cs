@@ -1,5 +1,4 @@
 ﻿using OnBoarding.Domain.Dto;
-using OnBoarding.Domain.Empresas;
 using OnBoarding.Domain.Interfaces.Repositories;
 using OnBoarding.Domain.Interfaces.Services;
 using System;

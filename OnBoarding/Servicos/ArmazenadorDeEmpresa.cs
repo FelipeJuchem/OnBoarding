@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using OnBoarding.Domain.Dto;
-using OnBoarding.Domain.Empresas;
+﻿using OnBoarding.Domain.Dto;
+using OnBoarding.Domain.Entidades.Empresas;
 using OnBoarding.Domain.Interfaces.Repositories;
 using OnBoarding.Domain.Interfaces.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace OnBoarding.Domain.Servicos
@@ -27,7 +22,7 @@ namespace OnBoarding.Domain.Servicos
             // 3.5 Passo: Validar cada campo do DTO.
 
             // 4 Passo: Inicializando a entidade Empresa, utilizando os dados que vem do DTO.
-            var empresa = new Empresas.Empresa(empresaDto.Nome, empresaDto.Id, empresaDto.DataFundacao);
+            var empresa = new Empresa(empresaDto.Nome, empresaDto.Id, empresaDto.DataFundacao);
 
             // 6 Passo: Passar para o repositorio a entidade Empresa inicializada, com os dados preechidos de acordo com o que foi enviado no DTO.
             _empresaRepository.Armazenar(empresa);

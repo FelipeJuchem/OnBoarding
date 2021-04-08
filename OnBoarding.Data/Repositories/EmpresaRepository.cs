@@ -1,4 +1,4 @@
-﻿using OnBoarding.Domain.Empresas;
+﻿using OnBoarding.Domain.Entidades.Empresas;
 using OnBoarding.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;

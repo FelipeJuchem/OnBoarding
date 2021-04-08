@@ -1,4 +1,4 @@
-﻿using OnBoarding.Domain.Funcionarios;
+﻿using OnBoarding.Domain.Entidades.Funcionarios;
 using OnBoarding.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;

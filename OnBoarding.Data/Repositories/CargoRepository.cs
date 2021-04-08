@@ -1,4 +1,4 @@
-﻿using OnBoarding.Domain.Cargos;
+﻿using OnBoarding.Domain.Entidades.Cargos;
 using OnBoarding.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
