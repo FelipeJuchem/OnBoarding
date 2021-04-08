@@ -6,8 +6,8 @@ namespace OnBoarding.Domain.Dto
 {
     public class EmpresaDto
     {
-        public int Id { get;  set; }
+        public int Id { get;  set; } //0, valor
         public string Nome { get; set; }
-        public string Cpf { get;  set; }
+        public DateTime DataFundacao { get;  set; }
     }
 }

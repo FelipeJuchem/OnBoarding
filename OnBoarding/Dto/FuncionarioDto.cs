@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace OnBoarding.Domain.Empresas
+namespace OnBoarding.Domain.Dto
 {
-    public class Empresa
+    class FuncionarioDto
     {
         public int Id { get; private set; }
         public string Nome { get; private set; }
-        public string Cpf  { get; private set; }
+        public DateTime DataContratacao { get; private set; }
     }
 }
