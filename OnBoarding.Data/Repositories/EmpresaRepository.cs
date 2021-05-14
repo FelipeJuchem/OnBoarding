@@ -8,14 +8,9 @@ namespace OnBoarding.Data
 {
     public class EmpresaRepository : Repository<int, Empresa> , IEmpresaRepository
     {
-        private readonly DataContext _context;
-        
-        public EmpresaRepository()
+        public EmpresaRepository(DataContext dataContext) : base(dataContext)
         {
-            _context = new DataContext();
-            Inicializar(_context);
-        }
 
-        
+        }
     }
 }

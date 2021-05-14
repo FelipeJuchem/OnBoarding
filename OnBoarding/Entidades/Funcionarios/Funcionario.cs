@@ -14,15 +14,25 @@ namespace OnBoarding.Domain.Entidades.Funcionarios
         public Empresa Empresa { get; private set; }
         public int EmpresaId { get; private set; }
         public List<FuncionarioCargo> FuncionariosCargos { get; private set; }
-        public Funcionario(int id, string nome, DateTime dataContratacao)
+        
+        public Funcionario(int id, string nome, DateTime dataContratacao, int empresaId)
         {
             Nome = nome;
             Id = id;
             DataContratacao = dataContratacao;
+            EmpresaId = empresaId;
         }
 
         public Funcionario()
         {
+
+        }
+
+        public void Update(string nome, DateTime dataContratacao, int empresaId)
+        {
+            Nome = nome;
+            DataContratacao = dataContratacao;
+            EmpresaId = empresaId;
 
         }
 

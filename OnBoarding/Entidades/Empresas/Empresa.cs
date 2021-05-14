@@ -25,10 +25,15 @@ namespace OnBoarding.Domain.Entidades.Empresas
         public List<Funcionario> Funcionarios { get; private set; }
 
 
-        public void update(string nome, DateTime dataFundacao)
+        public void Update(string nome, DateTime dataFundacao)
         {
             Nome = nome;
             DataFundacao = dataFundacao;
+        }
+
+        public void UpdateNome(string nome)
+        {
+            Nome = nome;
         }
 
     }

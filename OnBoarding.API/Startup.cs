@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using OnBoarding.Data;
 using OnBoarding.Data.Repositories;
+using OnBoarding.Domain.AutoMapper;
 using OnBoarding.Domain.Interfaces.Repositories;
 using OnBoarding.Domain.Interfaces.Services;
 using OnBoarding.Domain.Servicos;
@@ -36,6 +37,9 @@ namespace OnBoarding.API
             services.AddDbContext<DataContext>(
                 options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=OnboardingA"));
             AdicionarInjecaoDeDependencia(services);
+
+            services.AddAutoMapper(typeof(AutoMapperSetup));
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1",
@@ -58,6 +62,14 @@ namespace OnBoarding.API
             services.AddScoped(typeof(IExcluidorDeEmpresa), typeof(ExcluidorDeEmpresa));
             services.AddScoped(typeof(IEmpresaConsulta), typeof(EmpresaConsulta));
             services.AddScoped(typeof(IAlteradorDeEmpresa), typeof(AlteradorDeEmpresa));
+            services.AddScoped(typeof(IArmazenadorDeFuncionario), typeof(ArmazenadorDeFuncionario));
+            services.AddScoped(typeof(IFuncionarioConsulta), typeof(FuncionarioConsulta));
+            services.AddScoped(typeof(IExcluidorDeFuncionario), typeof(ExcluidorDeFuncionario));
+            services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
+            services.AddScoped(typeof(IAlteradorDeFuncionario), typeof(AlteradorDeFuncionario));
+            services.AddScoped(typeof(IArmazenadorDeCargo), typeof(ArmazenadorDeCargo));
+            services.AddScoped(typeof(IArmazenadorFuncionarioCargo), typeof(ArmazenadorFuncionarioCargo));
+            services.AddScoped(typeof(IFuncionarioCargoRepository), typeof(FuncionarioCargoRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

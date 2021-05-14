@@ -10,7 +10,7 @@ using OnBoarding.Data;
 namespace OnBoarding.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210408192122_initial")]
+    [Migration("20210409192854_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,7 +95,7 @@ namespace OnBoarding.Data.Migrations
 
                     b.HasIndex("FuncionarioId");
 
-                    b.ToTable("FuncionarioCargo");
+                    b.ToTable("FuncionarioCargos");
                 });
 
             modelBuilder.Entity("OnBoarding.Domain.Entidades.Funcionarios.Funcionario", b =>

@@ -1,4 +1,5 @@
-﻿using OnBoarding.Domain.Dto;
+﻿using AutoMapper;
+using OnBoarding.Domain.Dto;
 using OnBoarding.Domain.Interfaces.Repositories;
 using OnBoarding.Domain.Interfaces.Services;
 using System;
@@ -10,38 +11,24 @@ namespace OnBoarding.Domain.Servicos
     public class EmpresaConsulta : IEmpresaConsulta
     {
         private readonly IEmpresaRepository _empresaRepository;
+        private readonly IMapper _mapper;
 
-        public EmpresaConsulta(IEmpresaRepository empresaRepository)
+        public EmpresaConsulta(IEmpresaRepository empresaRepository, IMapper mapper)
         {
             _empresaRepository = empresaRepository;
+            _mapper = mapper;
         }
         public List<EmpresaDto> Obter()
         {
             var listaEmpresas = _empresaRepository.BuscarLista();
-            var empresasDto = new List<EmpresaDto>();
-            foreach(var empresa in listaEmpresas)
-            {
-                var empresaDto = new EmpresaDto()
-                {
-                    Id = empresa.Id,
-                    Nome = empresa.Nome,
-                    DataFundacao = empresa.DataFundacao
-                };
-                empresasDto.Add(empresaDto);
-            }
+            var empresasDto = _mapper.Map<List<EmpresaDto>>(listaEmpresas);
             return empresasDto;
-
-
         }
+
         public EmpresaDto ObterPorId(int id)
         {
             var empresa = _empresaRepository.BuscarPorId(id);
-            var empresaDto = new EmpresaDto
-            {
-                Id = empresa.Id,
-                Nome = empresa.Nome,
-                DataFundacao = empresa.DataFundacao
-            };
+            var empresaDto = _mapper.Map<EmpresaDto>(empresa);
             return empresaDto;
         }
     }

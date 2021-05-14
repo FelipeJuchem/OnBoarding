@@ -4,10 +4,12 @@ using System.Text;
 
 namespace OnBoarding.Domain.Dto
 {
-    class FuncionarioDto
+    public class FuncionarioDto
     {
-        public int Id { get; private set; }
-        public string Nome { get; private set; }
-        public DateTime DataContratacao { get; private set; }
+        public EmpresaDto Empresa { get; set; }
+        public int EmpresaId { get; set; }
+        public int Id { get;  set; }
+        public string Nome { get;  set; }
+        public DateTime DataContratacao { get; set; }
     }
 }

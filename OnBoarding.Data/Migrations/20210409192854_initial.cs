@@ -56,7 +56,7 @@ namespace OnBoarding.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FuncionarioCargo",
+                name: "FuncionarioCargos",
                 columns: table => new
                 {
                     FuncionarioId = table.Column<int>(nullable: false),
@@ -64,15 +64,15 @@ namespace OnBoarding.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FuncionarioCargo", x => new { x.CargoId, x.FuncionarioId });
+                    table.PrimaryKey("PK_FuncionarioCargos", x => new { x.CargoId, x.FuncionarioId });
                     table.ForeignKey(
-                        name: "FK_FuncionarioCargo_Cargo_CargoId",
+                        name: "FK_FuncionarioCargos_Cargo_CargoId",
                         column: x => x.CargoId,
                         principalTable: "Cargo",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_FuncionarioCargo_Funcionario_FuncionarioId",
+                        name: "FK_FuncionarioCargos_Funcionario_FuncionarioId",
                         column: x => x.FuncionarioId,
                         principalTable: "Funcionario",
                         principalColumn: "Id",
@@ -85,15 +85,15 @@ namespace OnBoarding.Data.Migrations
                 column: "EmpresaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FuncionarioCargo_FuncionarioId",
-                table: "FuncionarioCargo",
+                name: "IX_FuncionarioCargos_FuncionarioId",
+                table: "FuncionarioCargos",
                 column: "FuncionarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FuncionarioCargo");
+                name: "FuncionarioCargos");
 
             migrationBuilder.DropTable(
                 name: "Cargo");

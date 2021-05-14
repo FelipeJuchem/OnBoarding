@@ -5,16 +5,8 @@ using System.Text;
 
 namespace OnBoarding.Domain.Interfaces.Repositories
 {
-    public interface ICargoRepository
+    public interface ICargoRepository : IRepository<int, Cargo>
     {
-        void Armazenar(Cargo obj);
-
-        void Excluir(Cargo obj);
-
-        Cargo BuscarPorId(int Id);
-
-        List<Cargo> BuscarLista();
-
-        Cargo Alterador(Cargo obj);
+       
     }
 }

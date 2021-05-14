@@ -18,8 +18,8 @@ namespace OnBoarding.Data
 
         public DbSet<Empresa> Empresa { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
-
         public DbSet<Cargo> Cargo { get; set; }
+        public DbSet<FuncionarioCargo> FuncionarioCargos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -60,6 +60,8 @@ namespace OnBoarding.Data
                 .WithMany(x => x.Funcionarios)
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasForeignKey(x => x.EmpresaId);
+
+            
 
             var funcionarioCargo = modelBuilder.Entity<FuncionarioCargo>();
 

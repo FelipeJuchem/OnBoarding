@@ -93,7 +93,7 @@ namespace OnBoarding.Data.Migrations
 
                     b.HasIndex("FuncionarioId");
 
-                    b.ToTable("FuncionarioCargo");
+                    b.ToTable("FuncionarioCargos");
                 });
 
             modelBuilder.Entity("OnBoarding.Domain.Entidades.Funcionarios.Funcionario", b =>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnBoarding.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace OnBoarding.Data
 {
-    public class Repository<TId, TEntity> where TEntity : class
+    public class Repository<TId, TEntity> : IRepository<TId, TEntity> 
+        where TId : struct 
+        where TEntity : class
     {
-        private DbSet<TEntity> _dbSet;
-        private DataContext _dataContext;
+        private readonly DbSet<TEntity> _dbSet;
+        private readonly DataContext _dataContext;
 
-        public void Inicializar(DataContext context)
+        public Repository(DataContext dataContext)
         {
-            _dataContext = context;
+            _dataContext = dataContext;
             _dbSet = _dataContext.Set<TEntity>();
         }
 

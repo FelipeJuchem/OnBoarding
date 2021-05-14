@@ -4,9 +4,10 @@ using System.Text;
 
 namespace OnBoarding.Domain.Dto
 {
-    class CargoDto
+    public class CargoDto
     {
-        public int Id { get; private set; }
+        public int CargoId { get; set; }
+        public int Id { get; set; }
         public string Descricao { get; set; }
     }
 }

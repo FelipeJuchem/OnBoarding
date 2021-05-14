@@ -1,4 +1,5 @@
-﻿using OnBoarding.Domain.Dto;
+﻿using AutoMapper;
+using OnBoarding.Domain.Dto;
 using OnBoarding.Domain.Entidades.Empresas;
 using OnBoarding.Domain.Interfaces.Repositories;
 using OnBoarding.Domain.Interfaces.Services;
@@ -10,7 +11,7 @@ namespace OnBoarding.Domain.Servicos
     {
 
         private readonly IEmpresaRepository _empresaRepository;
-
+        
         public ArmazenadorDeEmpresa(IEmpresaRepository empresaRepository)
         {
             _empresaRepository = empresaRepository;

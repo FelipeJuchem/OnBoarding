@@ -1,4 +1,5 @@
-﻿using OnBoarding.Domain.Entidades.Funcionarios;
+﻿using Microsoft.EntityFrameworkCore;
+using OnBoarding.Domain.Entidades.Funcionarios;
 using OnBoarding.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,18 @@ namespace OnBoarding.Data.Repositories
 {
     public class FuncionarioRepository : Repository<int, Funcionario>, IFuncionarioRepository
     {
-        private readonly DataContext _context;
-
-        public FuncionarioRepository()
+        private readonly DataContext _dataContext;
+        
+        public FuncionarioRepository(DataContext dataContext) : base(dataContext)
         {
-            _context = new DataContext();
-            Inicializar(_context);
+            _dataContext = dataContext;
         }
+
+        public IEnumerable<Funcionario> BucarListaComEmpresa()
+        {
+            return _dataContext.Set<Funcionario>()
+                .Include(x => x.Empresa);
+        }
+
     }
 }

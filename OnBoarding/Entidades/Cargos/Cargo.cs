@@ -11,15 +11,14 @@ namespace OnBoarding.Domain.Entidades.Cargos
         public string Descricao { get; private set; }
         public List<FuncionarioCargo> FuncionariosCargos { get; private set; }
 
-        public Cargo(int id, string descricao)
-        {
-            Id = id;
-            Descricao = descricao;
-        }
-
         public Cargo()
         {
 
+        }
+
+        public Cargo(string descricao)
+        {
+            Descricao = descricao;
         }
     }
 }

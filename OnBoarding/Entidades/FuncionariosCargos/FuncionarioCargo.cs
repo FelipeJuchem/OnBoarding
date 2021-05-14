@@ -13,5 +13,14 @@ namespace OnBoarding.Domain.Entidades.FuncionariosCargos
         public Funcionario Funcionario { get; private set; }
         public Cargo Cargo { get; private set; }
 
+        public FuncionarioCargo()
+        {
+
+        }
+        public FuncionarioCargo(int funcionarioId, int cargoId)
+        {
+            FuncionarioId = funcionarioId;
+            CargoId = cargoId;
+        }
     }
 }

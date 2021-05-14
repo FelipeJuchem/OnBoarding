@@ -5,16 +5,8 @@ using System.Text;
 
 namespace OnBoarding.Domain.Interfaces.Repositories
 {
-    public interface IFuncionarioRepository
+    public interface IFuncionarioRepository : IRepository<int, Funcionario>
     {
-        void Armazenar(Funcionario obj);
-
-        void Excluir(Funcionario obj);
-
-        Funcionario BuscarPorId(int Id);
-
-        List<Funcionario> BuscarLista();
-
-        Funcionario Alterador(Funcionario obj);
+        IEnumerable<Funcionario> BucarListaComEmpresa();
     }
 }
